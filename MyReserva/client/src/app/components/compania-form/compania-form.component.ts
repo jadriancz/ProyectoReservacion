@@ -13,6 +13,8 @@ export class CompaniaFormComponent implements OnInit {
 
   @HostBinding('class')classes='row';
 
+companias: any= [];
+
   compania: Compania={
   id: 0,
   nombre: '',
@@ -44,10 +46,17 @@ console.log(params)
     }
 
     saveNewCompania(){
-        delete this.compania.created_at;
-        delete this.compania.id;
-       console.log(this.compania.idExterno + this.compania.id + this.compania.telefono );
-       this.companiaService.saveCompania(this.compania)
+
+ const param=this.compania;
+
+
+param.idExterno =param.nombre.substring(0,4) + param.telefono.substring(6,10)+"NE";
+
+
+       delete param.created_at;
+       delete param.id;
+
+       this.companiaService.saveCompania(param)
        .subscribe(
                res =>{
                  console.log(res);
@@ -61,6 +70,7 @@ console.log(params)
     updatedCompania(){
       delete this.compania.created_at;
 
+             this.compania.idExterno =this.compania.nombre.substring(0,4) + this.compania.telefono.substring(6,10)+"NE";
      this.companiaService.updatedCompania(this.compania.id, this.compania)
      .subscribe(
              res =>{

@@ -3,19 +3,23 @@
 <div class="card">
 
 <div class="card-body">
-<form>
-<div class="form-group">
-<input type="text" name="nombre" placeholder="nombre" [(ngModel)]="compania.nombre" class="form-control" lang="10" autofocus>
+<form >
+<div class="form-group" >
+<input type="text" name="nombre" placeholder="nombre" [(ngModel)]="compania.nombre" class="form-control"   autofocus>
 </div>
 <div class="form-group">
-<input type="text" name="direccion" placeholder="direccion" [(ngModel)]="compania.direccion" lang="10"  rows="2" class="form-control" autofocus>
+<input type="text" name="direccion" placeholder="direccion" [(ngModel)]="compania.direccion" rows="2" class="form-control" autofocus>
 </div>
 <div class="form-group">
-<input type="text" name="telefono" placeholder="telefono" [(ngModel)]="compania.telefono" lang="10" rows="2" class="form-control" autofocus>
+<input type="text" name="telefono" placeholder="telefono" [(ngModel)]="compania.telefono" rows="2" class="form-control" autofocus>
 </div>
+
 <button class="btn btn-success btn-block" (click)="edit ? updatedCompania() : saveNewCompania()">
 Save
 </button>
+
+
+
 </form>
 </div>
 </div>
@@ -25,7 +29,7 @@ Save
 <div class="card card-body text-center">
 <h3>{{compania.id}}. {{compania.nombre}}</h3>
 <p>{{compania.direccion}}</p>
-<p>{{compania.idExterno}}</p>
+<p>{{compania.telefono}}</p>
 <p>{{compania.created_at | date: 'yyyy-MM-dd'}}</p>
 </div>
 </div>

@@ -8,9 +8,12 @@
        <i class="far fa-trash-alt"></i>
        </button>
        </div>
-       <img alt="card-img-top" src="{{compania.image}}">
+
   <div class="card-body">
-       <p>{{compania.direccion}}</p>
+    <b>  Direccion:</b> <p>{{compania.direccion}}</p>
+    <b>   Telefono:</b> <p>{{compania.telefono}}</p>
+    <b>   Id Externo:</b> <p>{{compania.idExterno}}</p>
+
        <a [routerLink]="['/companias/edit',compania.id]" class="btn btn-info btn-block" >
        EDIT GAME
        </a>

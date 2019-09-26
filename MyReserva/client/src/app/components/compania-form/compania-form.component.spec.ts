@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameFormComponent } from './game-form.component';
+import { CompaniaFormComponent } from './compania-form.component';
 
-describe('GameFormComponent', () => {
-  let component: GameFormComponent;
-  let fixture: ComponentFixture<GameFormComponent>;
+describe('CompaniaFormComponent', () => {
+  let component: CompaniaFormComponent;
+  let fixture: ComponentFixture<CompaniaFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameFormComponent ]
+      declarations: [ CompaniaFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameFormComponent);
+    fixture = TestBed.createComponent(CompaniaFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

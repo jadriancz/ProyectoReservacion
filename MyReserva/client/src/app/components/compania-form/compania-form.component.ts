@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostBinding } from '@angular/core';
 import {Compania} from 'src/app/models/compania';
 import {CompaniaService} from 'src/app/services/compania.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -16,7 +16,7 @@ export class CompaniaFormComponent implements OnInit {
   compania: Compania={
   id: 0,
   nombre: '',
-  description: '',
+  direccion: '',
   telefono: '',
   idExterno:'',
   created_at:  new Date()
@@ -28,7 +28,7 @@ export class CompaniaFormComponent implements OnInit {
 
     ngOnInit( ) {
     const params=  this.activeRoute.snapshot.params;
-
+console.log(params)
   if(params){
        this.companiaService.getCompania(params.id)
        .subscribe(
@@ -46,12 +46,12 @@ export class CompaniaFormComponent implements OnInit {
     saveNewCompania(){
         delete this.compania.created_at;
         delete this.compania.id;
-       console.log(this.idExterno + this.id + this.telefono );
+       console.log(this.compania.idExterno + this.compania.id + this.compania.telefono );
        this.companiaService.saveCompania(this.compania)
        .subscribe(
                res =>{
                  console.log(res);
-                 this.router.navigate(['/compania']);
+                 this.router.navigate(['/companias']);
                },
                err=> console.error(err)
                )
@@ -65,7 +65,7 @@ export class CompaniaFormComponent implements OnInit {
      .subscribe(
              res =>{
                console.log(res);
-               this.router.navigate(['/compania']);
+               this.router.navigate(['/companias']);
              },
              err=> console.error(err)
              )

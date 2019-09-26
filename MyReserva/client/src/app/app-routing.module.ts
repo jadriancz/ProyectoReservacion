@@ -2,28 +2,28 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {CompaniaListComponent} from './components/compania-list/compania-list.component';
-import {GameFormComponent} from './components/game-form/game-form.component';
+import {CompaniaFormComponent} from './components/compania-form/compania-form.component';
 
 const routes: Routes = [
                   {
                       path:'',
-                      redirectTo:'/games',
+                      redirectTo:'/companias',
                       pathMatch: 'full'
 
                   },
                   {
-                      path: 'games',
+                      path: 'companias',
                       component:CompaniaListComponent
                   },
                   {
 
-                      path:'games/add',
-                    component:GameFormComponent
+                      path:'companias/add',
+                    component:CompaniaFormComponent
 
                   },
                   {
-                      path:'games/edit/:id',
-                    component:GameFormComponent
+                      path:'companias/edit/:id',
+                    component:CompaniaFormComponent
 
                   }
                         ];

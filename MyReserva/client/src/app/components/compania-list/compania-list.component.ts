@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostBinding} from '@angular/core';
 import {CompaniaService} from '../../services/compania.service';
 import {Router} from '@angular/router';
 
@@ -9,15 +9,16 @@ import {Router} from '@angular/router';
 })
 export class CompaniaListComponent implements OnInit {
 
-  @HostBinding('class') classes = 'row';
-  compania: any= [];
+ @HostBinding('class') classes = 'row';
+  companias: any= [];
 
   constructor(private companiaService: CompaniaService, private router:Router) { }
 
   ngOnInit() {
-  this.companiaService.getCompania().subscribe(
+
+  this.companiaService.getCompanias().subscribe(
          res =>{
-           this.compania=res;
+           this.companias=res;
          },
          err => console.error(err)
   );

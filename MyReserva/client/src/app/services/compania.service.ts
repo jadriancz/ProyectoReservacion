@@ -13,7 +13,7 @@ export class CompaniaService {
 
   constructor(private http: HttpClient) { }
 
-    getCompania(){
+    getCompanias(){
            return this.http.get(`${this.API_URI}/reserva`);
       }
     getCompania(id:string){

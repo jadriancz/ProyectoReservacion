@@ -1,10 +1,11 @@
 CREATE DATABASE restaurante;
 
-CREATE TABLE restaurante.restaurantes (
-    id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(180),
-    direccion VARCHAR(255),
-    telefono VARCHAR(200),
-	idExterno VARCHAR(200),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE `restaurantes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `direccion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `telefono` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idExterno` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

@@ -1,11 +1,11 @@
 export default {
-    
+
     database:{
         host:'localhost',
-        user: 'root', 
+        user: 'root',
         password:'mysql',
-        database: 'ng_games'
-             
-    }          
-            
+        database: 'restaurante'
+
+    }
+
 }

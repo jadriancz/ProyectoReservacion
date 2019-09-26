@@ -1,13 +1,13 @@
 import express,{Application} from 'express';
 import indexRoutes from './routes/indexRoutes'
-import gamesRoutes from './routes/gamesRoutes'
+import reservaRoutes from './routes/reservaRoutes'
 import morgan from 'morgan';
 import cors from  'cors';
 
 class Server{
-    
-    public app: Application; 
-    
+
+    public app: Application;
+
 constructor(){
         this.app=express();
         this.config();
@@ -20,15 +20,15 @@ config(): void {
     this.app.use(cors());
     this.app.use(express.json())
     this.app.use(express.urlencoded({extended: false}));
-} 
+}
 
 routes():void{
     this.app.use('/',indexRoutes)
-    this.app.use('/api/games',gamesRoutes)
+    this.app.use('/api/reserva',reservaRoutes)
 }
 
 start():void{
-    
+
     this.app.listen(this.app.get('port'),()=>{
         console.log('server on port ',this.app.get('port'));
 });

@@ -5,6 +5,6 @@ exports.default = {
         host: 'localhost',
         user: 'root',
         password: 'mysql',
-        database: 'ng_games'
+        database: 'restaurante'
     }
 };
